@@ -1,36 +1,113 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🚀 NextJS Boilerplate 2025
 
-## Getting Started
+A modern, feature-rich starter template for building web applications with Next.js 15, Prisma, shadcn/ui, and better-auth.
 
-First, run the development server:
+## ✨ Features
+
+- 🔥 [Next.js 15](https://nextjs.org/) with App Router and Turbopack
+- 💾 [Prisma](https://www.prisma.io/) with PostgreSQL (Supabase) integration
+- 🎨 [shadcn/ui](https://ui.shadcn.com/) for beautiful, accessible components
+- 🔐 [better-auth](https://github.com/better-auth/better-auth) for authentication
+- 🌙 Dark mode support with [next-themes](https://github.com/pacocoursey/next-themes)
+- 📱 Fully responsive design with [Tailwind CSS](https://tailwindcss.com/)
+- 🪄 TypeScript for type safety
+- 🔔 Toast notifications with [sonner](https://sonner.emilkowal.ski/)
+
+## 🚦 Getting Started
+
+### Prerequisites
+
+- Node.js 18+ and pnpm (recommended)
+- PostgreSQL database (or use the provided Supabase connection)
+
+### Setup
+
+1. **Clone the repository**
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/yourusername/boilerplate-2025.git
+cd boilerplate-2025
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. **Install dependencies**
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+pnpm install
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+3. **Environment Setup**
 
-## Learn More
+Copy the example environment file and modify as needed:
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+cp .env.example .env
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Update the following variables in your `.env` file:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- `DATABASE_URL`: Your PostgreSQL connection string (with pooling)
+- `DIRECT_URL`: Direct database connection (for migrations)
+- `NEXT_PUBLIC_BETTER_AUTH_SECRET`: Secret key for authentication
+- `NEXT_PUBLIC_BETTER_AUTH_URL`: Your application URL
 
-## Deploy on Vercel
+4. **Set up the database**
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```bash
+pnpm prisma db push
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+5. **Start the development server**
+
+```bash
+pnpm dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) to see your application.
+
+## 🏗️ Project Structure
+
+```
+boilerplate-2025/
+├── app/             # Next.js app router pages and layouts
+├── components/      # UI components (including shadcn components)
+├── lib/             # Utility functions and shared code
+├── prisma/          # Prisma schema and migrations
+├── public/          # Static assets
+└── ...
+```
+
+## 💻 Development Workflow
+
+- Modify `app/page.tsx` to change the homepage
+- Run `pnpm prisma studio` to view and edit your database
+- Add new components to the `components/` directory
+- Add new pages in the `app/` directory
+- Update the Prisma schema in `prisma/schema.prisma` for database changes
+
+## 🧩 Adding shadcn/ui Components
+
+To add new shadcn/ui components, use the CLI:
+
+```bash
+pnpm dlx shadcn-ui@latest add button
+```
+
+## 🔐 Authentication with better-auth
+
+This boilerplate uses better-auth for authentication. Available features:
+
+- Email/password login and registration
+- OAuth providers support
+- Session management
+- User profiles
+
+## 📚 Learn More
+
+- [Next.js Documentation](https://nextjs.org/docs)
+- [Prisma Documentation](https://www.prisma.io/docs)
+- [shadcn/ui Documentation](https://ui.shadcn.com)
+- [Tailwind CSS Documentation](https://tailwindcss.com/docs)
+
+## 📄 License
+
+MIT
