@@ -25,8 +25,8 @@ A modern, feature-rich starter template for building web applications with Next.
 1. **Clone the repository**
 
 ```bash
-git clone https://github.com/yourusername/boilerplate-2025.git
-cd boilerplate-2025
+git clone https://github.com/Amarito75/nextjs-boilerplate-2025.git
+cd nextjs-boilerplate-2025
 ```
 
 2. **Install dependencies**
